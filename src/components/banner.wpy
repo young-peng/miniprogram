@@ -1,0 +1,50 @@
+<style>
+    swiper {
+        height: 421.5rpx;
+    }
+    swiper-item image {
+        width: 100%;
+        height: 100%;
+    }
+    .swiper-container{
+        position: relative;
+    }
+    .swiper-container .swiper{
+        height: 300rpx;
+    }
+    .swiper-container .swiper .img{
+        width: 100%;
+        height: 100%;
+    }
+</style>
+<template>
+    <view class="swiper-container">
+        <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{duration}}" current="{{swiperCurrent}}"  class="swiper">
+            <block wx:for="{{imgUrls}}" wx:key="unique">
+                <swiper-item>
+                    <image src="{{item}}" class="img" />
+                </swiper-item>
+            </block>
+        </swiper>
+    </view>
+</template>
+<script>
+    import wepy from 'wepy'
+    export default class Banner extends wepy.component {
+        data = {
+            swiperCurrent: 0,
+            indicatorDots: true,
+            autoplay: true,
+            interval: 3000,
+            duration: 800,
+            circular: true,
+            imgUrls: [
+                'https://p3.pstatp.com/large/43700001e49d85d3ab52',
+                'https://p3.pstatp.com/large/39f600038907bf3b9c96',
+                'https://p3.pstatp.com/large/31fa0003ed7228adf421'
+            ],
+        }
+        methods = {
+        }
+    }
+</script>

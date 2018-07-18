@@ -1,0 +1,23 @@
+<template>
+  <view class="container">
+    <Banner></Banner>
+    <Grid></Grid>
+    <toast />
+  </view>
+</template>
+<script>
+  import wepy from 'wepy'
+  import Toast from 'wepy-com-toast'
+  import Banner from '../components/banner'
+  import Grid from '../components/grid'
+  export default class Index extends wepy.page {
+    config = {
+      navigationBarTitleText: '小工具'
+    }
+    components = {
+      Banner : Banner,
+      Grid   : Grid,
+      toast  : Toast
+    }
+  }
+</script>

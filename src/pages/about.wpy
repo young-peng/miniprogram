@@ -1,0 +1,21 @@
+<template>
+    <view class="container">
+        <Banner></Banner>
+        <toast />
+    </view>
+</template>
+<script>
+    import wepy from 'wepy'
+    import Toast from 'wepy-com-toast'
+    import Banner from '../components/banner'
+    export default class About extends wepy.page {
+        config = {
+            navigationBarTitleText: '小工具2'
+        }
+        components = {
+            toast  : Toast,
+            Banner : Banner
+        }
+        data = {}
+    }
+</script>
