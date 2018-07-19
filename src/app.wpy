@@ -44,7 +44,8 @@
         config = {
             pages: [
                 'pages/index',
-                'pages/about'
+                'pages/about',
+                'pages/train'
             ],
             window: {
                 backgroundTextStyle: 'light',
