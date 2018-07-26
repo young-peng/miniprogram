@@ -19,32 +19,35 @@
 </style>
 <template>
     <view class="swiper-container">
-        <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{duration}}" current="{{swiperCurrent}}"  class="swiper">
-            <block wx:for="{{imgUrls}}" wx:key="unique">
+        <swiper indicator-dots="{{cell.indicatorDots}}" autoplay="{{cell.autoplay}}" interval="{{cell.interval}}" duration="{{cell.duration}}" circular="{{cell.duration}}" current="{{cell.swiperCurrent}}"  class="swiper">
+            <block wx:for="{{cell.imgUrls}}" wx:key="unique">
                 <swiper-item>
                     <image src="{{item}}" class="img" />
                 </swiper-item>
             </block>
         </swiper>
     </view>
+    <!--<view wx:for="{{cell.imgUrls}}" wx:key="unique">-->
+        <!--&lt;!&ndash;<image src="{{item}}" class="img" />&ndash;&gt;-->
+        <!--<text>{{item}}</text>-->
+    <!--</view>-->
 </template>
 <script>
     import wepy from 'wepy'
     export default class Banner extends wepy.component {
+        props = {
+            cell: {
+                type:Object
+            }
+        }
         data = {
-            swiperCurrent: 0,
-            indicatorDots: true,
-            autoplay: true,
-            interval: 3000,
-            duration: 800,
-            circular: true,
-            imgUrls: [
-                'https://p3.pstatp.com/large/43700001e49d85d3ab52',
-                'https://p3.pstatp.com/large/39f600038907bf3b9c96',
-                'https://p3.pstatp.com/large/31fa0003ed7228adf421'
-            ],
+            cell:{}
         }
         methods = {
+        }
+
+        onLoad(){
+            console.log(this.data)
         }
     }
 </script>

@@ -1,6 +1,6 @@
 <template>
   <view class="container">
-    <Banner></Banner>
+    <Banner :cell.sync="cell"></Banner>
     <Grid></Grid>
     <toast />
   </view>
@@ -14,10 +14,33 @@
     config = {
       navigationBarTitleText: '小工具'
     }
+
+    data = {
+      cell:{}
+    }
+
     components = {
       Banner : Banner,
       Grid   : Grid,
       toast  : Toast
+    }
+    onLoad(){
+      this.cell = {
+        swiperCurrent: 0,
+        indicatorDots: true,
+        autoplay: true,
+        interval: 3000,
+        duration: 800,
+        circular: true,
+        imgUrls: [
+          'https://p3.pstatp.com/large/43700001e49d85d3ab52',
+          'https://p3.pstatp.com/large/39f600038907bf3b9c96',
+          'https://p3.pstatp.com/large/31fa0003ed7228adf421'
+        ],
+      };
+      console.log(this.cell)
+      this.$apply()
+
     }
   }
 </script>

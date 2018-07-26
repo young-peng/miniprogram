@@ -58,6 +58,9 @@
             tabClick (e) {
                 this.sliderOffset = e.currentTarget.offsetLeft;
                 this.activeIndex = e.currentTarget.id;
+            },
+            showTopTips(e) {
+
             }
         }
 
